@@ -5,18 +5,13 @@
 		<title>Exercice 4</title>
 	</head>
 <body>
-	<form method="POST">
-		<label for="size">Size : </label>
-    	<input type="number" value="" name="size" id="size">
-    	<input type="submit" value="Valider">
-	</form>
+	<p style="font-weight: <?=$gras ?>"><?="$i - $j"?></p>
+	<p style="font-weight: <?=$gras ?>;color:<?=$couleur ?>"><?="$i - $j"?></p>
 	 <?php
-    	$ligne=$_GET["1"]??10;
-		$colon=$_GET["c"]??10;
-		
 		for ($i=0;$i<$ligne;$i++){
 			$bold=($i%2==0)?"bold":"normal";
-		for ($j%2==
+		for ($j=0,$j<$colon;$j++){
+			$color=($j%2==0)?"red":"black";
     ?>
     <textarea name="texte"></textarea>
 </body>
