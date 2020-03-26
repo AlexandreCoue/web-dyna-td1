@@ -11,7 +11,7 @@
     	<input type="submit" value="Valider">
 	</form>
 	 <?php
-    	echo "<div style='font-size: {$_GET["size"]}px; color: {$_GET["Color"]}'>{$_GET["message"]}</div>";
+    	echo "<div style='font-size: {$_POST["size"]}px; color: {$_POST["Color"]}'>{$_POST["message"]}</div>";
     ?>
     <textarea name="texte"></textarea>
 </body>
