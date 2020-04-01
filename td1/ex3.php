@@ -7,13 +7,29 @@
 <body>
 	<form method="POST">
 		<label for="size">Size : </label>
-    	<input type="number" value="" name="size" id="size">
-    	<input type="submit" value="Valider">
+		<input type="number" value="<?=$size?>" name="size" id="size">
+		<label for="message">Message : </label>
+		<input type="text" value="<?=$message?>" name="message" id="message">
+		<label for="couleur">Couleur : </label>
+		<input type="color" value="<?=$color?>" name="couleur" id="couleur">
+		<input type="submit" value="Valider">
+		<input type="submit" name="update" value="+">
+		<input type="submit" name="update" value="-">
 	</form>
-	 <?php
-    	echo "<div style='font-size: {$_POST["size"]}px; color: {$_POST["Color"]}'>{$_POST["message"]}</div>";
-    ?>
-    <textarea name="texte"></textarea>
+	<?php
+		$size = $_POST['size'] ?? 10;
+		$color = $_POST['couleur'] ?? 'black';
+		$message = $_POST['message'] ?? 'Pas de message envoyé';
+		$update = $_POST['update'] ?? null;
+
+		if ($update == "+") {
+			$size = $size + 2;
+		} elseif ($update == "-") {
+			$size = $size - 2;
+		}
+
+		echo "<div style='font-size: {$size}px; color: {$color} ;'>Message de taille {$size}px en {$message}</div>";
+	?>
 </body>
 </html>
 
